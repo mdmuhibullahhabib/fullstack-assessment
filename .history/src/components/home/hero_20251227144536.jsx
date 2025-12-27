@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative bg-black text-white max-h-[659px]">
+    <section className="relative bg-black text-white max-h-[659">
       <img
         src="https://images.unsplash.com/photo-1520975916090-3105956dac38"
         className="absolute inset-0 w-full h-full object-cover opacity-40"

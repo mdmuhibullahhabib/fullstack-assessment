@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 const InfoCards = () => {
   return (
-    <div className="absolute md:ml-[700px] md:mt-[-130px] flex flex-col md:flex-row w-full max-w-4xl mx-auto font-sans">
+    <div className="absolute md:ml-[700px] md:mt-[-100px] flex flex-col md:flex-row w-full max-w-4xl gap-6 mx-auto font-sans">
       
       {/* Left Card - Quality Product */}
       <div className="flex-1 bg-[#FF4D30] p-8 md:p-10 text-white max-w-[269px] max-h-[270px] flex flex-col justify-between">
