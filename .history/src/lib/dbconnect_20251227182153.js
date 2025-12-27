@@ -5,7 +5,6 @@ export const collectionNamesobj = {
     usersCollection : "users",
     cartCollection : "carts",
     ordersCollection : "orders",
-    bannerCollection : "banner",
 
 }
 

@@ -16,24 +16,6 @@ export default function Apparel() {
       img: "https://images.unsplash.com/photo-1520975916090-3105956dac38",
     },
     {
-      id: "1",
-      name: "Women Apparel",
-      price: "৳1,000.00 → ৳10,000.00",
-      img: "https://images.unsplash.com/photo-1520975916090-3105956dac38",
-    },
-    {
-      id: "1",
-      name: "Women Apparel",
-      price: "৳1,000.00 → ৳10,000.00",
-      img: "https://images.unsplash.com/photo-1520975916090-3105956dac38",
-    },
-    {
-      id: "1",
-      name: "Women Apparel",
-      price: "৳1,000.00 → ৳10,000.00",
-      img: "https://images.unsplash.com/photo-1520975916090-3105956dac38",
-    },
-    {
       id: "2",
       name: "Men Apparel",
       price: "৳1,000.00 → ৳10,000.00",

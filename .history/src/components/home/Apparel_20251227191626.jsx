@@ -2,31 +2,12 @@
 
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
 
 export default function Apparel() {
   const { data: session } = useSession();
   const router = useRouter();
 
   const products = [
-    {
-      id: "1",
-      name: "Women Apparel",
-      price: "৳1,000.00 → ৳10,000.00",
-      img: "https://images.unsplash.com/photo-1520975916090-3105956dac38",
-    },
-    {
-      id: "1",
-      name: "Women Apparel",
-      price: "৳1,000.00 → ৳10,000.00",
-      img: "https://images.unsplash.com/photo-1520975916090-3105956dac38",
-    },
-    {
-      id: "1",
-      name: "Women Apparel",
-      price: "৳1,000.00 → ৳10,000.00",
-      img: "https://images.unsplash.com/photo-1520975916090-3105956dac38",
-    },
     {
       id: "1",
       name: "Women Apparel",
@@ -67,9 +48,9 @@ export default function Apparel() {
       });
 
       if (res.ok) {
-        toast.success("Added to cart successfully 🛒");
+        alert("Added to cart successfully ✅");
       } else {
-        toast.error("Failed to add to cart");
+        alert("Failed to add cart ❌");
       }
     } catch (error) {
       console.error(error);
