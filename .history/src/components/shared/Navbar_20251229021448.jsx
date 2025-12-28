@@ -35,7 +35,7 @@ export default function Navbar() {
                 <CiLocationOn />
                 <span>Kashimpur, Gazipur Sadar / Gazipur</span>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-2">
                 <FaMobile />
                 <span>+880 01713-027875</span>
               </div>

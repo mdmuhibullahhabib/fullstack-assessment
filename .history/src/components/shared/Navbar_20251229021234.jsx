@@ -31,11 +31,11 @@ export default function Navbar() {
 
             {/* Left Side: Contact Info */}
             <div className="flex items-center gap-8 pl-4">
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-2">
                 <CiLocationOn />
                 <span>Kashimpur, Gazipur Sadar / Gazipur</span>
               </div>
-              <div className="flex items-center gap-1">
+              <div className="flex items-center gap-2">
                 <FaMobile />
                 <span>+880 01713-027875</span>
               </div>
