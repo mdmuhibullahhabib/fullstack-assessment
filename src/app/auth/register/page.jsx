@@ -5,8 +5,12 @@ import { Mail, Lock, Eye, User } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { registerUser } from "@/app/actions/auth/registerUser";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+
 
 const RegisterPage = () => {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -14,8 +18,13 @@ const RegisterPage = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
-    await registerUser(data);
-    alert("Registration successful!");
+    try {
+      await registerUser(data);
+      toast.success("Registration successful! Please login");
+      router.push("/auth/login");
+    } catch (error) {
+      toast.error("Registration failed ❌");
+    }
   };
 
   return (
@@ -40,12 +49,11 @@ const RegisterPage = () => {
             >
               Login
             </Link>
-            <Link
-              href="/auth/login"
-              className="px-8 py-2.5 border-2 border-white rounded-full text-sm font-bold hover:bg-white hover:text-[#4cb5b0]"
+            <button
+              className="px-8 py-2.5 border-2 border-white rounded-full text-sm font-bold ]"
             >
               Sign Up
-            </Link>
+            </button>
           </div>
         </div>
 
@@ -126,18 +134,6 @@ const RegisterPage = () => {
             >
               Sign Up
             </button>
-
-            {/* ===== Divider ===== */}
-            <div className="flex items-center gap-4 py-4">
-              <div className="h-[1px] flex-1 bg-gray-200/60" />
-              <span className="text-gray-400 text-[11px] uppercase">or</span>
-              <div className="h-[1px] flex-1 bg-gray-200/60" />
-            </div>
-
-            {/* ===== Social ===== */}
-            <div className="text-center text-xs text-gray-500">
-              Social signup coming soon
-            </div>
           </form>
         </div>
       </div>

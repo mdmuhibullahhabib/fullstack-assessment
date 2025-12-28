@@ -33,7 +33,7 @@ const LoginLayout = () => {
     <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4">
       <div className="w-full max-w-[850px] min-h-[550px] rounded-[45px] shadow-2xl overflow-hidden flex flex-col bg-gradient-to-b from-[#00bfa5] via-[#7ce7db] via-[#ccf5f0] to-white border border-white/20">
 
-        {/* ===== NAVBAR ===== */}
+        {/*  NAVBAR  */}
         <div className="flex justify-between items-center px-10 pt-8 text-white">
           <div className="flex gap-2">
             <div className="w-9 h-9 border border-white/60 rounded flex items-center justify-center font-bold text-xs">M</div>
@@ -43,10 +43,10 @@ const LoginLayout = () => {
           </div>
 
           <div className="flex gap-10 items-center">
-            <button className="px-8 py-2.5 border-2 border-white rounded-full text-sm font-bold hover:bg-white hover:text-[#00bfa5] transition-all">
+            <button className="px-8 py-2.5 border-2 border-white rounded-full text-sm font-bold">
               Login
             </button>
-            <Link href="/auth/register" className="text-sm font-medium hover:text-white/80">
+            <Link href="/auth/register" className="text-sm font-medium ">
               Sign Up
             </Link>
           </div>

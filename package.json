@@ -9,9 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.90.12",
+    "@tanstack/react-query": "^5.90.13",
     "bcrypt": "^6.0.0",
     "daisyui": "^5.5.14",
+    "framer-motion": "^12.23.26",
     "lucide-react": "^0.562.0",
     "mongodb": "^7.0.0",
     "next": "16.1.1",

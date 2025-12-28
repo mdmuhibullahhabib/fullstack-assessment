@@ -5,12 +5,24 @@ import { Menu, X, ShoppingCart, User, LocationEditIcon } from "lucide-react";
 import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { FaInstagram , FaFacebookF, FaTwitter, FaYoutube, FaMobile } from "react-icons/fa";
+import { useSession } from "next-auth/react";
+import DrawerMenu from "../user/UserDrawerMenu";
 
+    // User icon click
+    const handleUserClick = () => {
+        if (status == "authenticated") {
+            setUserDrawerOpen(true);
+        } else {
+            router.push("/auth");
+        }
+    };
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-
+      const [userDrawerOpen, setUserDrawerOpen] = useState(false);
+    const { data: session, status } = useSession();
   return (
+     <>
     <header className="w-full">
       {/* ===== Top Bar ===== */}
       <div className="bg-[#4cb5b0] text-white text-[13px] font-medium border-b border-white/10">
@@ -85,9 +97,30 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <ShoppingCart className="cursor-pointer" />
 
+                        {/* User Icon */}
+                        <button
+                            onClick={handleUserClick}
+                            className="p-2 rounded-full hover:bg-gray-100 transition duration-150"
+                        >
+                            {status == "authenticated" ? (
+                                <img
+                                    src={fakeUser?.avatar}
+                                    alt="user"
+                                    className="h-8 w-8 rounded-full border"
+                                />
+                            ) : (
+                                <Link
+                                    href="/auth"
+                                    className="px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition"
+                                >
+                                    লগ ইন
+                                </Link>
+                            )}
+                        </button>
             <Link
               href="/auth/login"
-             className=" text">
+             className="px-4 py-2 border border-[#ee4b22] text-gray-800 rounded-lg hover:bg-[#ee4b22] hover:text-white"
+             >
               Login
             </Link>
 
@@ -133,5 +166,11 @@ export default function Navbar() {
         )}
       </div>
     </header>
+                <DrawerMenu
+                isOpen={userDrawerOpen}
+                onClose={() => setUserDrawerOpen(false)}
+                // user={user}
+            />
+           </>
   );
 }
