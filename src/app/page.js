@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
       <InfoCards />
       <Stats />
-      <LogoMarquee />
+      {/* <LogoMarquee /> */}
       <CustomProcess />
       <Apparel />
     </>
