@@ -6,9 +6,9 @@ export default function useProducts() {
   const { data, isLoading, isError, error, refetch } = useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const res = await fetch("/api/products");
+      const res = await fetch("/api/cart");
       const result = await res.json();
-      
+
       console.log("API RESULT ", result);
 
       if (Array.isArray(result)) return result;

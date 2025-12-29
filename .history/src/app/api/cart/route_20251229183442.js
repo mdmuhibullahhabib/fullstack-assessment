@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import dbConnect, { collectionNamesobj } from "@/lib/dbconnect";
-import { ObjectId } from "mongodb";
-
 
 // Add to Cart 
 export async function POST(req) {
   try {
+
     const session = await auth();
     if (!session?.user?.email) {
       return NextResponse.json(
@@ -82,36 +81,5 @@ export async function GET() {
       { message: "Server error" },
       { status: 500 }
     );
-  }
-}
-
-// delete 
-export async function DELETE(req) {
-  try {
-    const session = await auth();
-    if (!session?.user?.email) {
-      return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
-    }
-
-    const { searchParams } = new URL(req.url);
-    const id = searchParams.get("id");
-
-    if (!id) {
-      return NextResponse.json({ message: "Cart ID missing" }, { status: 400 });
-    }
-
-    const cartCollection = await dbConnect(
-      collectionNamesobj.cartCollection
-    );
-
-    await cartCollection.deleteOne({
-      _id: new ObjectId(id),
-      userEmail: session.user.email,
-    });
-
-    return NextResponse.json({ message: "Item removed" });
-  } catch (error) {
-    console.error("Cart DELETE error:", error);
-    return NextResponse.json({ message: "Server error" }, { status: 500 });
   }
 }

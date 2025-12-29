@@ -1,12 +1,11 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import dbConnect, { collectionNamesobj } from "@/lib/dbconnect";
-import { ObjectId } from "mongodb";
-
 
 // Add to Cart 
 export async function POST(req) {
   try {
+
     const session = await auth();
     if (!session?.user?.email) {
       return NextResponse.json(
@@ -84,8 +83,6 @@ export async function GET() {
     );
   }
 }
-
-// delete 
 export async function DELETE(req) {
   try {
     const session = await auth();
@@ -104,6 +101,7 @@ export async function DELETE(req) {
       collectionNamesobj.cartCollection
     );
 
+    // 🔐 Email validation (important)
     await cartCollection.deleteOne({
       _id: new ObjectId(id),
       userEmail: session.user.email,

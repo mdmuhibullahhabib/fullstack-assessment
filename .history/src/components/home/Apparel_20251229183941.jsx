@@ -10,7 +10,6 @@ export default function Apparel() {
   const router = useRouter();
   const { products } = useProducts();
 
-  
   const handleAddToCart = async (product) => {
 
     if (!session?.user?.email) {

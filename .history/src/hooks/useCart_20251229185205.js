@@ -8,7 +8,6 @@ export default function useProducts() {
     queryFn: async () => {
       const res = await fetch("/api/products");
       const result = await res.json();
-      
       console.log("API RESULT ", result);
 
       if (Array.isArray(result)) return result;

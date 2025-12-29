@@ -7,8 +7,12 @@ export default function useProducts() {
     queryKey: ["products"],
     queryFn: async () => {
       const res = await fetch("/api/products");
+
+      if (!res.ok) {
+        throw new Error("কোর্স ডাটা আনতে সমস্যা হয়েছে");
+      }
+
       const result = await res.json();
-      
       console.log("API RESULT ", result);
 
       if (Array.isArray(result)) return result;

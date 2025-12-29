@@ -8,20 +8,23 @@ import toast from "react-hot-toast";
 export default function Apparel() {
   const { data: session } = useSession();
   const router = useRouter();
-  const { products } = useProducts();
-
-  
+  const {products } = useProducts();
+ 
+ 
   const handleAddToCart = async (product) => {
-
+  
     if (!session?.user?.email) {
       router.push("/auth/login");
       return;
     }
 
+    // Logged in → save to DB
     const cartData = {
+      userEmail: session.user.email,
+      productId: product.id,
       name: product.name,
-      image: product.img,
       price: product.price,
+      image: product.img,
       quantity: 1,
     };
 
@@ -32,29 +35,32 @@ export default function Apparel() {
         body: JSON.stringify(cartData),
       });
 
-      const data = await res.json();
-
       if (res.ok) {
-        toast.success("Added to cart");
+        toast.success("Added to cart successfully 🛒");
       } else {
-        toast.error(data.message || "Failed to add");
+        toast.error("Failed to add to cart");
       }
     } catch (error) {
       console.error(error);
-      toast.error("Something went wrong");
     }
   };
 
   return (
     <section className="bg-white py-16">
       <div className="max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl font-bold mb-8">Our Apparels</h2>
+
+        <div className="flex justify-between mb-8">
+          <h2 className="text-2xl font-bold">Our Apparels</h2>
+          <span className="text-sm text-gray-600 cursor-pointer">
+            See All Products
+          </span>
+        </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {products.map((p) => (
             <div
               key={p._id}
-              className="bg-white rounded-xl shadow hover:shadow-md transition"
+              className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden"
             >
               <img
                 src={p.img}
@@ -64,18 +70,25 @@ export default function Apparel() {
 
               <div className="p-4">
                 <h3 className="font-semibold text-sm">{p.name}</h3>
-                <p className="text-xs text-gray-500 mb-4">${p.price}</p>
+                <p className="text-xs text-gray-500 mb-4">{p.price}</p>
 
-                <button
-                  onClick={() => handleAddToCart(p)}
-                  className="w-full bg-teal-500 hover:bg-teal-600 text-white text-xs py-2 rounded"
-                >
-                  Add To Cart
-                </button>
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => handleAddToCart(p)}
+                    className="flex-1 bg-teal-500 hover:bg-teal-600 text-white text-xs py-2 rounded"
+                  >
+                    Add To Cart
+                  </button>
+
+                  <button className="flex-1 bg-gray-100 text-xs py-2 rounded">
+                    Buy Now
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

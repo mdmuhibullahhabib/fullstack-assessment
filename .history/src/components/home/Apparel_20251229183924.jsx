@@ -10,9 +10,8 @@ export default function Apparel() {
   const router = useRouter();
   const { products } = useProducts();
 
-  
   const handleAddToCart = async (product) => {
-
+ 
     if (!session?.user?.email) {
       router.push("/auth/login");
       return;
@@ -35,7 +34,7 @@ export default function Apparel() {
       const data = await res.json();
 
       if (res.ok) {
-        toast.success("Added to cart");
+        toast.success("Added to cart 🛒");
       } else {
         toast.error(data.message || "Failed to add");
       }

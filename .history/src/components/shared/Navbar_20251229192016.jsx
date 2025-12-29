@@ -227,11 +227,11 @@ export default function Navbar({ cartCount = 2, onSearch }) {
       </header>
 
       {/* Cart Drawer */}
-      // <CartDrawer
-      //   isOpen={drawerOpen}
-      //   onClose={() => setDrawerOpen(false)}
-      //   cartItems={sampleCartItems}
-      // />
+      <CartDrawer
+        isOpen={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        cartItems={sampleCartItems}
+      />
       {/* Cart Drawer */}
       <CartDrawer
         isOpen={drawerOpen}

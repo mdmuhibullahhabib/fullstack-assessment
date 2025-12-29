@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ShoppingCart, User } from "lucide-react";
 import { useState } from "react";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { FaInstagram, FaFacebookF, FaTwitter, FaYoutube, FaMobile, FaUser } from "react-icons/fa";
@@ -227,16 +227,12 @@ export default function Navbar({ cartCount = 2, onSearch }) {
       </header>
 
       {/* Cart Drawer */}
-      // <CartDrawer
-      //   isOpen={drawerOpen}
-      //   onClose={() => setDrawerOpen(false)}
-      //   cartItems={sampleCartItems}
-      // />
-      {/* Cart Drawer */}
       <CartDrawer
         isOpen={drawerOpen}
         onClose={() => setDrawerOpen(false)}
+        cartItems={sampleCartItems}
       />
+
       {/* userdrawer */}
       <DrawerMenu
         isOpen={userDrawerOpen}

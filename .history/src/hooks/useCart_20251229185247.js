@@ -2,13 +2,13 @@
 
 import { useQuery } from "@tanstack/react-query";
 
-export default function useProducts() {
+export default function usecart() {
   const { data, isLoading, isError, error, refetch } = useQuery({
-    queryKey: ["products"],
+    queryKey: ["cart"],
     queryFn: async () => {
-      const res = await fetch("/api/products");
+      const res = await fetch("/api/cart");
       const result = await res.json();
-      
+
       console.log("API RESULT ", result);
 
       if (Array.isArray(result)) return result;
@@ -19,7 +19,7 @@ export default function useProducts() {
   });
 
   return {
-    products: data || [],
+    cart: data || [],
     isLoading,
     isError,
     error,

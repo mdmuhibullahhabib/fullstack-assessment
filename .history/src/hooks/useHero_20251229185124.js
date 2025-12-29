@@ -3,7 +3,8 @@
 import { useQuery } from "@tanstack/react-query";
 
 export default function useHero() {
-  const {  data, isLoading, isError, error, refetch } = useQuery({
+  const {  data, isLoading, isError, error, refetch,
+  } = useQuery({
     queryKey: ["hero"],
     queryFn: async () => {
       const res = await fetch("/api/hero");
