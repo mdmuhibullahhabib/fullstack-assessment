@@ -21,7 +21,7 @@ const InfoCards = () => {
         </a>
       </div>
 
-      {/* Right Card */}
+      {/* Right Card*/}
       <div className="flex-1 bg-[#4cb5b0] p-8 md:p-10 text-white max-w-[269px] max-h-[270px] flex flex-col justify-between">
         <div>
           <h3 className="text-xl font-semibold mb-4">Project Overview</h3>

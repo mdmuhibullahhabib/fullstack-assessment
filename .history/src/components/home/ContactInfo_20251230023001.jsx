@@ -19,7 +19,7 @@ export default function ContactInfo() {
       <div className="max-w-7xl mx-auto px-4 flex flex-wrap gap-12">
         {contacts.map((item, i) => (
           <div key={i} className="flex items-center gap-4">
-
+            {/* Icon Container */}
             <div className="flex-shrink-0">
               {item.icon}
             </div>

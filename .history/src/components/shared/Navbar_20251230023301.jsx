@@ -31,7 +31,7 @@ export default function Navbar() {
   const { cart, isLoading } = useCart();
   const cartLength = cart?.length || 0;
 
-  // User icon click
+  // User icon click handler
   const handleUserClick = () => {
     if (status === "authenticated") {
       setUserDrawerOpen(true);

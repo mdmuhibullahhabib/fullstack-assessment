@@ -15,16 +15,16 @@ export default function ContactInfo() {
   ];
 
   return (
-    <section className="bg-white ml-14 py-10">
+    <section className="bg-white mpy-10">
       <div className="max-w-7xl mx-auto px-4 flex flex-wrap gap-12">
         {contacts.map((item, i) => (
           <div key={i} className="flex items-center gap-4">
-
+            {/* Icon Container */}
             <div className="flex-shrink-0">
               {item.icon}
             </div>
             
- 
+            {/* Text Content */}
             <div className="flex flex-col">
               <h3 className="text-teal-500 font-bold text-lg leading-tight">
                 {item.title}

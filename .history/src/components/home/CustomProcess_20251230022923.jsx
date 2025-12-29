@@ -19,7 +19,7 @@ export default function CustomProcess() {
         <section className="bg-white py-20  font-sans">
             <div className=" mx-auto">
 
-                {/* TOP SECTION */}
+                {/* ===== TOP SECTION ===== */}
                 <div className="relative bg-[#E6F7F8] overflow-hidden flex flex-col md:pl-8 md:py-[60px]  md:flex-row items-stretch -mb-16 ">
 
                     {/* Left Content Box  */}
@@ -31,8 +31,8 @@ export default function CustomProcess() {
                             backgroundPosition: "center",
                         }}
                     >
-                        <div
-                            className="ml-16"
+                        <div 
+                        className="ml-16"
                         >
                             <div className="mb-3">
                                 <span className="px-5 py-1.5 rounded-full border border-teal-200 text-teal-500 text-[11px] font-bold uppercase tracking-[0.2em]">
@@ -56,7 +56,7 @@ export default function CustomProcess() {
                         </div>
                     </div>
 
-                    {/* Right Content  */}
+                    {/* Right Content (Image of hanging clothes) */}
                     <div className="w-full md:w-[40%] relative flex items-center justify-center py-10">
                         <div className="relative w-[85%] h-[450px]">
                             <Image
@@ -70,7 +70,7 @@ export default function CustomProcess() {
                     </div>
                 </div>
 
-                {/*  PROCESS STEPS GRID  */}
+                {/* ===== PROCESS STEPS GRID ===== */}
                 <div className="flex flex-wrap justify-center gap-6 px-20">
                     {steps.map((step, index) => (
                         <div
@@ -82,7 +82,7 @@ export default function CustomProcess() {
                 ${index >= 4 ? 'lg:translate-y-2' : ''}
               `}
                         >
-
+                            {/* Step Number Circle */}
                             <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 bg-white border border-gray-100 shadow-md rounded-full flex items-center justify-center text-xs font-black text-gray-300">
                                 {step.number}
                             </div>

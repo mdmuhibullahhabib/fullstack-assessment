@@ -19,7 +19,7 @@ export default function CustomProcess() {
         <section className="bg-white py-20  font-sans">
             <div className=" mx-auto">
 
-                {/* TOP SECTION */}
+                {/* ===== TOP SECTION ===== */}
                 <div className="relative bg-[#E6F7F8] overflow-hidden flex flex-col md:pl-8 md:py-[60px]  md:flex-row items-stretch -mb-16 ">
 
                     {/* Left Content Box  */}

@@ -31,7 +31,7 @@ export default function Navbar() {
   const { cart, isLoading } = useCart();
   const cartLength = cart?.length || 0;
 
-  // User icon click
+  // User icon click handler
   const handleUserClick = () => {
     if (status === "authenticated") {
       setUserDrawerOpen(true);
@@ -44,10 +44,11 @@ export default function Navbar() {
     <>
       <header className="w-full">
 
+        {/* ================= TOP BAR ================= */}
         <div className="bg-[#4cb5b0] text-white text-xs md:text-[13px] font-medium border-b border-white/10">
           <div className="max-w-6xl mx-auto flex justify-between items-center h-10 px-4">
 
-            {/* Contact Info */}
+            {/* Left: Contact Info */}
             <div className="hidden sm:flex items-center gap-6">
               <div className="flex items-center gap-1">
                 <CiLocationOn />
@@ -60,7 +61,7 @@ export default function Navbar() {
             </div>
 
             {/*  Social Icons */}
-            <div className="relative h-full flex items-center  md:mr-8">
+                    <div className="relative h-full flex items-center  md:mr-8">
               <div className="absolute right-0 top-0 bottom-[-2px] md:w-[115px] bg-white origin-top-right transform translate-x-4"></div>
 
               <div className="relative flex items-center md:ml-8 gap-3 text-[#ee4b22]">
@@ -70,11 +71,10 @@ export default function Navbar() {
                 <FaYoutube />
               </div>
             </div>
-
           </div>
         </div>
 
-        {/* main navbar */}
+        {/* ================= MAIN NAVBAR ================= */}
         <div className="bg-white shadow">
           <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-4">
 
@@ -88,7 +88,7 @@ export default function Navbar() {
               </span>
             </Link>
 
-            {/* Desktop  */}
+            {/* Desktop Menu */}
             <nav className="hidden md:flex items-center gap-8 text-gray-800 font-medium">
               <Link href="/">Home</Link>
               <Link href="/about">About Us</Link>
@@ -106,7 +106,7 @@ export default function Navbar() {
               <Link href="/blogs">Blogs</Link>
             </nav>
 
-            {/* Right Action */}
+            {/* Right Actions (Desktop) */}
             <div className="hidden md:flex items-center gap-4">
 
               {/* Cart */}
@@ -145,7 +145,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden"
@@ -154,7 +154,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/*  MOBILE MENU  */}
+          {/* ================= MOBILE MENU ================= */}
           {open && (
             <div className="md:hidden bg-white border-t">
               <nav className="flex flex-col gap-4 px-4 py-4 text-gray-700">

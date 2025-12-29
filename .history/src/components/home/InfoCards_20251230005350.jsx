@@ -1,14 +1,13 @@
-import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const InfoCards = () => {
   return (
-    <div className="md:absolute md:ml-[700px] md:mt-[-130px] flex flex-col md:flex-row w-full max-w-4xl mx-auto font-sans">
+    <div className="flex flex-col md:flex-row justify-center items-center gap-6 px-4 sm:px-8 mt-8 max-w-7xl mx-auto font-sans">
       
       {/* Left Card */}
-      <div className="flex-1 bg-[#ee4b22] p-8 md:p-10 text-white max-w-[269px] max-h-[270px] flex flex-col justify-between">
+      <div className="flex-1 bg-[#ee4b22] p-6 md:p-10 text-white rounded-xl flex flex-col justify-between max-w-sm w-full">
         <div>
-          <h2 className="text-2xl font-bold mb-4">Quality Product</h2>
+          <h2 className="text-2xl font-bold mb-3">Quality Product</h2>
           <p className="text-sm leading-relaxed mb-4 opacity-90">
             Lorem ipsum dolor sit amet consectetur adipiscing elit. Samed consectetur.
           </p>
@@ -22,18 +21,19 @@ const InfoCards = () => {
       </div>
 
       {/* Right Card */}
-      <div className="flex-1 bg-[#4cb5b0] p-8 md:p-10 text-white max-w-[269px] max-h-[270px] flex flex-col justify-between">
+      <div className="flex-1 bg-[#4cb5b0] p-6 md:p-10 text-white rounded-xl flex flex-col justify-between max-w-sm w-full">
         <div>
-          <h3 className="text-xl font-semibold mb-4">Project Overview</h3>
-          <p className="text-4xl font-bold mb-4">35 Millions</p>
+          <h3 className="text-xl font-semibold mb-3">Project Overview</h3>
+          <p className="text-3xl sm:text-4xl font-bold mb-4">35 Millions</p>
         </div>
         <a 
-          href="#" 
+          href="" 
           className="flex items-center gap-2 text-sm font-semibold hover:underline mt-4"
         >
           Read More <ArrowRight size={18} />
         </a>
       </div>
+
     </div>
   );
 };

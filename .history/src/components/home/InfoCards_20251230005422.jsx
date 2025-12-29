@@ -3,9 +3,9 @@ import { ArrowRight } from 'lucide-react';
 
 const InfoCards = () => {
   return (
-    <div className="md:absolute md:ml-[700px] md:mt-[-130px] flex flex-col md:flex-row w-full max-w-4xl mx-auto font-sans">
+    <div className="mdabsolute md:ml-[700px] md:mt-[-130px] flex flex-col md:flex-row w-full max-w-4xl mx-auto font-sans">
       
-      {/* Left Card */}
+      {/* Left Card - Quality Product */}
       <div className="flex-1 bg-[#ee4b22] p-8 md:p-10 text-white max-w-[269px] max-h-[270px] flex flex-col justify-between">
         <div>
           <h2 className="text-2xl font-bold mb-4">Quality Product</h2>
@@ -21,7 +21,7 @@ const InfoCards = () => {
         </a>
       </div>
 
-      {/* Right Card */}
+      {/* Right Card - Project Overview */}
       <div className="flex-1 bg-[#4cb5b0] p-8 md:p-10 text-white max-w-[269px] max-h-[270px] flex flex-col justify-between">
         <div>
           <h3 className="text-xl font-semibold mb-4">Project Overview</h3>
