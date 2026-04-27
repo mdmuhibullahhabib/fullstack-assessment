@@ -9,7 +9,7 @@ import {
   FaFacebookF,
   FaTwitter,
   FaYoutube,
-
+  FaMobile,
   FaUser,
 } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
@@ -39,7 +39,7 @@ export default function Navbar() {
       router.push("/auth/login");
     }
   };
-
+  
   return (
     <>
       <header className="w-full">

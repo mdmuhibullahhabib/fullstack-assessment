@@ -31,7 +31,7 @@ export default function Navbar() {
   const { cart, isLoading } = useCart();
   const cartLength = cart?.length || 0;
 
-  // User icon click handler
+  // User icon click
   const handleUserClick = () => {
     if (status === "authenticated") {
       setUserDrawerOpen(true);
@@ -39,7 +39,7 @@ export default function Navbar() {
       router.push("/auth/login");
     }
   };
-
+this is 
   return (
     <>
       <header className="w-full">
@@ -47,7 +47,7 @@ export default function Navbar() {
         <div className="bg-[#4cb5b0] text-white text-xs md:text-[13px] font-medium border-b border-white/10">
           <div className="max-w-6xl mx-auto flex justify-between items-center h-10 px-4">
 
-            {/* Left: Contact Info */}
+            {/* Contact Info */}
             <div className="hidden sm:flex items-center gap-6">
               <div className="flex items-center gap-1">
                 <CiLocationOn />

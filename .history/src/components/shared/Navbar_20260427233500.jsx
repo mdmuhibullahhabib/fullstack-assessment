@@ -39,7 +39,6 @@ export default function Navbar() {
       router.push("/auth/login");
     }
   };
-
   return (
     <>
       <header className="w-full">
@@ -60,21 +59,16 @@ export default function Navbar() {
             </div>
 
             {/*  Social Icons */}
-      <div className="relative h-full flex items-center justify-center md:mr-8 md:justify-start">
-  
-  {/* white background shape */}
-  <div className="absolute right-0 top-0 bottom-[-2px] md:w-[115px] bg-white origin-top-right transform translate-x-4 hidden md:block"></div>
+            <div className="relative h-full flex items-center  md:mr-8">
+              <div className="absolute right-0 top-0 bottom-[-2px] md:w-[115px] bg-white origin-top-right transform translate-x-4"></div>
 
-  {/* social icons */}
-  <div className="relative flex items-center gap-4 md:ml-8 text-[#ee4b22]">
-    <FaFacebookF />
-    <FaTwitter />
-    <FaInstagram />
-    <FaYoutube />
-  </div>
-
-</div>
-
+              <div className="relative flex items-center md:ml-8 gap-3 text-[#ee4b22]">
+                <FaFacebookF />
+                <FaTwitter />
+                <FaInstagram />
+                <FaYoutube />
+              </div>
+            </div>
 
           </div>
         </div>
